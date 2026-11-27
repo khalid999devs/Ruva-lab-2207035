@@ -1,0 +1,5 @@
+lex.yy.c
+ruva.tab.c
+ruva.tab.h
+/ruva
+output.txt
