@@ -1,0 +1,4 @@
+// Pass mark and number of subjects
+
+keep p: int = 40;
+keep n: int = 3;

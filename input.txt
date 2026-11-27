@@ -1,0 +1,49 @@
+// Report card for one student
+
+craft average(t: int, n: int) -> real {
+    give t / n;
+}
+
+launch {
+    vary a, b, c: int;
+    vary t, k, i: int;
+    vary v: real;
+    vary g: char;
+
+    show("Report card");
+    show("");
+
+    ask("Mark of subject 1:", a);
+    ask("Mark of subject 2:", b);
+    ask("Mark of subject 3:", c);
+
+    t = a + b + c;
+    v = t / n;
+
+    show("");
+    show("Total:", t);
+    show("Average:", v);
+
+    check v >= 80 { g = 'A'; }
+    otherwise check v >= 60 { g = 'B'; }
+    otherwise check v >= p { g = 'C'; }
+    otherwise { g = 'F'; }
+
+    show("Grade:", g);
+
+    check v >= p { show("Result: passed"); }
+    otherwise { show("Result: failed"); }
+
+    k = t;
+    during k < 240 { k = k + 1; }
+
+    show("");
+    show("Marks needed for grade A:", k - t);
+
+    walk i from 0 until n { t = t + 2; }
+
+    show("Total with 2 bonus marks per subject:", t);
+
+    show("");
+    average(t, n);
+}
